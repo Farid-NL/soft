@@ -1,40 +1,20 @@
 program=${args[program]}
 
+# Simple programs
+if [[ ${simple_software[@]} =~ "${program}" ]]; then
+  install_dnf_package "${program}"
+  return
+fi
+
+# Custom programs
 case "${program}" in
-  git|\
-  fzf|\
-  eza|\
-  git-delta|\
-  bat|\
-  bfs|\
-  neovim|\
-  yakuake)
-    install_dnf_package "${program}"
-    ;;
-
-  zoxide)
-    install_zoxide
-    ;;
-
-  lazygit)
-    install_lazygit
-    ;;
-
+  zoxide|\
+  lazygit|\
   code|\
-  vscode)
-    install_code
-    ;;
-
-  docker)
-    install_docker
-    ;;
-
-  gh)
-    install_gh
-    ;;
-
+  docker|\
+  gh|\
   jetbrains-toolbox)
-    install_jetbrains
+    eval "install_${program}"
     ;;
 
   *)
