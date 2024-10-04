@@ -4,7 +4,7 @@ version: 0.5.0
 
 commands:
   - name: list
-    alias: l
+    alias: ls
     help: List all programs and show whether they are installed or not
 
 examples:
