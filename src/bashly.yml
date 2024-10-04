@@ -7,5 +7,12 @@ commands:
     alias: ls
     help: List all programs and show whether they are installed or not
 
+  - name: install
+    alias: i
+    help: Install given program
+    args:
+      - name: program
+        required: true
+
 examples:
 - soft list
