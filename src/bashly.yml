@@ -14,5 +14,9 @@ commands:
       - name: program
         required: true
 
+  - name: install-all
+    alias: all
+    help: Install all programs
+
 examples:
 - soft list
